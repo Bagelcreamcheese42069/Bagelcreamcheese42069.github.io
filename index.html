@@ -1,7 +1,7 @@
 <h2>IS OLIV LIVE??</h2>
 <h1 id="status">loding...</h1>
 <audio id="s" src="funny.mp3"></audio>
-<button onclick="document.getElementById('s').play()">press for funny</button>
+<button id="funnybutt">press for funny</button>
 
 
 <script>
@@ -17,4 +17,10 @@
     .catch(() => {
       document.getElementById('status').textContent = 'Check failed';
     });
+</script>
+<script>
+  document.getElementById('funnybutt').addEventListener('click', () => {
+    const a = new Audio('funny.mp3');
+    a.play();
+  });
 </script>
