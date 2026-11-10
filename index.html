@@ -1,6 +1,8 @@
 <h2>IS OLIV LIVE??</h2>
 <h1 id="status">loding...</h1>
-<audio id="funy" src="funny.mp3" preload="auto"></audio>
+<audio id="s" src="funny.mp3"></audio>
+<button onclick="document.getElementById('s').play()">press for funny</button>
+
 
 <script>
   const channel = 'justoliv_'; // Change to the streamer you want to check
@@ -15,12 +17,4 @@
     .catch(() => {
       document.getElementById('status').textContent = 'Check failed';
     });
-</script>
-<button id="funny">press for funny</button>
-<script>
-  const funnybutt = document.getElementById("funny");
-  const funnyaud = document.getElementById("funy");
-  funnybutt.addEventListener("click", function () {
-  funnyaud.play();
-  }
 </script>
