@@ -12,6 +12,10 @@ var score = 0
 var score_temp = 0
 k.scene("menu", () => {
   k.setBackground(135, 62, 132)
+  const instructions = add([
+    k.text("Don't let the fruits fall! :3"),
+    k.pos(k.width()/2 - 320, k.height()/2 - 160),
+  ])
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
     k.pos(center()),
@@ -39,6 +43,10 @@ k.scene("menu", () => {
 })
 k.scene("menu and score", () => {
   k.setBackground(135, 62, 132)
+  const instructions = add([
+    k.text("Don't let the fruits fall! :3"),
+    k.pos(k.width()/2 - 320, k.height()/2 - 160),
+  ])
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
     k.pos(k.width()/2, k.height()/2 - 60),
