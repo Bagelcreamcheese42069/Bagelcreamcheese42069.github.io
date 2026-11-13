@@ -39,6 +39,7 @@ k.scene("menu", () => {
 	btn.onClick(() => go("game"))
 })
 k.scene("menu and score", () => {
+  music.stop()
   const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
   const btn = add([
@@ -79,6 +80,7 @@ k.scene("menu and score", () => {
 })
 k.go("menu")
 k.scene("game", () => {
+  music.stop()
   const music = k.play("kevin2", {loop: true})
   const player = add([
     k.sprite("player"),
