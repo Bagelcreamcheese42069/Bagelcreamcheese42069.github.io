@@ -5,9 +5,13 @@ k.loadSprite("apple", "./apple.webp")
 k.loadSprite("badshoe", "./badshoe.webp")
 k.loadSprite("pineapple", "./pineapple.webp")
 k.loadSprite("melon", "./melon.webp")
+k.loadSound("ow", "./ow.mp3")
+k.loadSound("kevin1", "./kevin1.mp3")
+k.loadSound("kevin2", "./kevin2.mp3")
 var score = 0
 var score_temp = 0
 k.scene("menu", () => {
+  const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
@@ -35,6 +39,7 @@ k.scene("menu", () => {
 	btn.onClick(() => go("game"))
 })
 k.scene("menu and score", () => {
+  const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
@@ -74,6 +79,7 @@ k.scene("menu and score", () => {
 })
 k.go("menu")
 k.scene("game", () => {
+  const music = k.play("kevin2", {loop: true})
   const player = add([
     k.sprite("player"),
     k.area(),
@@ -94,6 +100,7 @@ k.scene("game", () => {
     food.move(0, speed/1.7)
     if (food.pos.y > k.height() - 80) {
       score = 0
+      k.play("ow")
       go("menu and score")
     }
   })
@@ -114,6 +121,7 @@ k.scene("game", () => {
 	player.onCollide("evil", (food) => {
     score = 0
 		k.shake(12)
+		k.play("ow")
 		k.go("menu and score")
 	})
 	player.onUpdate(() => {
