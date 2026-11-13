@@ -1,26 +1,10 @@
-<h2>IS OLIV LIVE??</h2>
-<h1 id="status">loding...</h1>
-<audio id="s" src="funny.mp3"></audio>
-<button id="funnybutt">press for funny bird</button>
-
-
-<script>
-  const channel = 'justoliv_'; // Change to the streamer you want to check
-
-  fetch(`https://decapi.me/twitch/uptime/${channel}`)
-    .then(res => res.text())
-    .then(text => {
-      // If it contains "offline" (case-insensitive), it's offline; otherwise it's live
-      const isOffline = text.toLowerCase().includes('offline');
-      document.getElementById('status').textContent = isOffline ? 'hell naw' : 'hell yea';
-    })
-    .catch(() => {
-      document.getElementById('status').textContent = 'Check failed';
-    });
-</script>
-<script>
-  document.getElementById('funnybutt').addEventListener('click', () => {
-    const a = new Audio('funny.mp3');
-    a.play();
-  });
-</script>
+<html>
+  <body>
+    <style>
+      body {
+      background: black;
+      }
+    </style>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
