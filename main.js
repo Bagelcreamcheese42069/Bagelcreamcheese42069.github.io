@@ -39,7 +39,6 @@ k.scene("menu", () => {
 	btn.onClick(() => go("game"))
 })
 k.scene("menu and score", () => {
-  music.stop()
   const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
   const btn = add([
@@ -76,11 +75,10 @@ k.scene("menu and score", () => {
 		btn.scale = vec2(1)
 		btn.color = rgb()
 	})
-	btn.onClick(() => go("game"))
+	btn.onClick(() => music.stop(), go("game"))
 })
 k.go("menu")
 k.scene("game", () => {
-  music.stop()
   const music = k.play("kevin2", {loop: true})
   const player = add([
     k.sprite("player"),
@@ -103,6 +101,7 @@ k.scene("game", () => {
     if (food.pos.y > k.height() - 80) {
       score = 0
       k.play("ow")
+      music.stop()
       go("menu and score")
     }
   })
@@ -124,6 +123,7 @@ k.scene("game", () => {
     score = 0
 		k.shake(12)
 		k.play("ow")
+		music.stop()
 		k.go("menu and score")
 	})
 	player.onUpdate(() => {
