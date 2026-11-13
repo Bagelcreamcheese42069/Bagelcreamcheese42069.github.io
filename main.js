@@ -11,8 +11,8 @@ k.loadSound("kevin2", "./kevin2.mp3")
 var score = 0
 var score_temp = 0
 k.scene("menu", () => {
-  const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
+  const music = k.play("kevin1", {loop: true})
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
     k.pos(center()),
