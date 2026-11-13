@@ -12,7 +12,6 @@ var score = 0
 var score_temp = 0
 k.scene("menu", () => {
   k.setBackground(135, 62, 132)
-  const music = k.play("kevin1", {loop: true})
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
     k.pos(center()),
@@ -39,7 +38,6 @@ k.scene("menu", () => {
 	btn.onClick(() => go("game"))
 })
 k.scene("menu and score", () => {
-  const music = k.play("kevin1", {loop: true})
   k.setBackground(135, 62, 132)
   const btn = add([
     k.rect(240, 80, { radius: 8 }),
@@ -75,7 +73,7 @@ k.scene("menu and score", () => {
 		btn.scale = vec2(1)
 		btn.color = rgb()
 	})
-	btn.onClick(() => music.stop(), go("game"))
+	btn.onClick(() => go("game"))
 })
 k.go("menu")
 k.scene("game", () => {
