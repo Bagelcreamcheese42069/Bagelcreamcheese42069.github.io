@@ -253,6 +253,7 @@ k.scene("catchgame", () => {
 })
 k.scene("flightgame", () => {
   lastgame = "flight"
+  const music = k.play("kevin2", {loop: true})
   k.setBackground(135, 206, 235)
   const player = add([
     k.sprite("player"),
@@ -275,12 +276,15 @@ k.scene("flightgame", () => {
   player.onUpdate(() => {
 		if (player.pos.y >= k.height() || player.pos.y <= -60) {
 			go("menu and score")
+			score = 0
 		}
 	})
 	player.onCollide("evil", (food) => {
     score = 0
 		k.shake(12)
 		k.play("ow")
+		music.stop()
+		socre = 0
 		k.go("menu and score")
 	})
   	function spawnPipe() {
