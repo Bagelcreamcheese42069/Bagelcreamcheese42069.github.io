@@ -6,8 +6,8 @@ k.loadSprite("badshoe", "./badshoe.webp")
 k.loadSprite("pineapple", "./pineapple.webp")
 k.loadSprite("melon", "./melon.webp")
 k.loadSound("ow", "./ow.mp3")
-k.loadSound("kevin1", "./kevin1.mp3")
-k.loadSound("kevin2", "./kevin2.mp3")
+k.loadSound("kevin1", "./bs.mp3")
+k.loadSound("kevin2", "./bs.mp3")
 var score = 0
 var score_temp = 0
 var lastgame = "none"
