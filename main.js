@@ -284,7 +284,7 @@ k.scene("flightgame", () => {
 		k.shake(12)
 		k.play("ow")
 		music.stop()
-		socre = 0
+		score = 0
 		k.go("menu and score")
 	})
   	function spawnPipe() {
